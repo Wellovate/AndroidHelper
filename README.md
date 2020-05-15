@@ -22,8 +22,6 @@ This project incorporates all our other repositories into one single package, an
    deviceHelper.Call<string>("getPUIVersion");
    ```
 
-
-
 ## Sytem Signature
 
 The interface marked with red dots requires the APK has the system signature.
@@ -39,7 +37,6 @@ Refer to the following two steps:
 2. Refer to [online instruction](http://static.appstore.picovr.com/docs/KioskMode/chapter_three.html) to sign your apk with system signature.
 
 
-
 ## Interfaces
 
 Click to view interface details.
@@ -47,7 +44,7 @@ Click to view interface details.
 **Note: The interface marked with red dots requires the system signature**
 
 ### DeviceHelper  
-- [getPUIVersion](https://github.com/picoxr/AndroidHelper/wiki)  
+- [getPUIVersion](https://github.com/picoxr/AndroidHelper/wiki): Get PUI version of device.   
 - [getDeviceType](https://github.com/picoxr/AndroidHelper/wiki)  
 - [getSN](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsn)   
 - [silentInstall🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename)     
