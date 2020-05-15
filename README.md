@@ -2,7 +2,7 @@
 
 The Android Helper project is designed to make it easy for Untiy developers to invoke native Android interfaces to control devices, modify Settings, and so on. 
 
-This project incorporates all our other repositories into one single package, and categorizes all interfaces into 5 classes:  ``DeviceHelper``, ``StorageHelper``, ``WifiHelper``, ``BlueToothHelper``, ``PowerManagerHelper``.
+This project incorporates all our other repositories into one single package, and categorizes all interfaces into 5 classes:  ``DeviceHelper``, ``StorageHelper``, ``BlueToothHelper``, ``WifiHelper``, ``PowerManagerHelper``.
 
 ## Usage
 
