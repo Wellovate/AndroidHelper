@@ -6,7 +6,7 @@ This project incorporates all our other repositories into one single package, an
 
 ## Usage
 
-1. Put ``androidhelper_vx.x.aar`` into the Unity project's Assets/Plugins/Android directory;
+1. Put ``androidhelper_vx.x.x.aar`` into the Unity project's Assets/Plugins/Android directory;
 
 2. Refer to the sample code below to call the interface.
 
@@ -46,96 +46,46 @@ Click to view interface details.
 
 **Note: The interface marked with red dots requires the system signature**
 
-- **DeviceHelper**
-
-Class name: com.picovr.androidhelper.DeviceHelper
-
-getDeviceType  
-
-getSN
-
-[silentInstall🔴]()
-
-silentUninstall🔴
-
-killApp🔴
-
-launch🔴
-
-goToApp
-
-startVRShell
-
-getAppsString
-
-registerHomeReceiver
-
-unregisterHomeReceiver
-
-openRecenterApp
-
-installApp
-
-- **StorageHelper**
-
-Class name: com.picovr.androidhelper.StorageHelper
-
-getStorageFreeSize
-
-getStorageTotalSize
-
-updateFile
-
-getSDCardPath
-
-- **BlueToothHelper**
-
-Class name: com.picovr.androidhelper.BlueToothHelper
-
-registerBlueToothReceiver
-
-unregisterBlueToothReceiver
-
-getContentDevice
-
-getBlueToothMac
-
-- **WifiHelper**
-
-Class name: com.picovr.androidhelper.WifiHelper
-
-registerWifiReceiver
-
-unregisterWifiReceiver
-
-getConnectedWifiSSID
-
-getWifiMac
-
-getWifiIpAddress
-
-connectWifi🔴
-
-connectWifiWithStaticIP
-
-- **PowerManagerHelper**
-
-Class name: com.picovr.androidhelper.PowerManagerHelper
-
-androidLockScreen
-
-androidUnLockScreen
-
-acquireWakeLock
-
-acquireWakeLock(timeout)
-
-releaseWakeLock
-
-setPropSleep
-
-setPropScreenOff
-
-androidShutDown🔴
-
-androidReBoot🔴
+### DeviceHelper  
+- [getPUIVersion](https://github.com/picoxr/AndroidHelper/wiki)  
+- [getDeviceType](https://github.com/picoxr/AndroidHelper/wiki)  
+- [getSN](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsn)   
+- [silentInstall](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename)     
+- [silentUninstall](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename)     
+- [killApp](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-killappstring-packagename)     
+- [launch](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchstring-filepath)     
+- [goToApp](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-gotoappstring-packagename)     
+- [startVRShell](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-startvrshellint-way-string-args)     
+- [getAppsString](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getappsstring)     
+- [registerHomeReceiver](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-registerhomereceiver)     
+- [unregisterHomeReceiver](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-unregisterhomereceiver)   
+- [openRecenterApp](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp)   
+- [installApp](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp)   
+### StorageHelper
+- [getStorageFreeSize]()   
+- [getStorageTotalSize]()   
+- [updateFile]()   
+- [getSDCardPath]()   
+### BlueToothHelper
+- [registerBlueToothReceiver]()   
+- [unregisterBlueToothReceiver]()   
+- [getContentDevice]()   
+- [getBlueToothMac]()   
+### WifiHelper
+- [registerWifiReceiver]()   
+- [unregisterWifiReceiver]()   
+- [getConnectedWifiSSID]()   
+- [getWifiMac]()   
+- [getWifiIpAddress]()   
+- [connectWifi]()   
+- [connectWifiWithStaticIP]()   
+### PowerManagerHelper
+- [androidLockScreen]()   
+- [androidUnLockScreen]()   
+- [acquireWakeLock]()   
+- [acquireWakeLock(timeout)]()   
+- [releaseWakeLock]()   
+- [setPropSleep]()   
+- [setPropScreenOff]()   
+- [androidShutDown]()   
+- [androidReBoot]()   
