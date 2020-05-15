@@ -44,8 +44,8 @@ Click to view interface details.
 **Note: The interface marked with red dots requires the system signature**
 
 ### DeviceHelper  
-- [getPUIVersion][1]: get PUI version of device.
-- [getDeviceType](https://github.com/picoxr/AndroidHelper/wiki): Get type of device.   
+- [getPUIVersion][getPUIVersion]: get PUI version of device.
+- [getDeviceType](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getdevicetype): Get type of device.   
 - [getSN](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsn): Get serial number of device.        
 - [silentInstall🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename): Install the application without user interaction.   
 - [silentUninstall🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename):  Uninstall the application without user interaction.       
@@ -87,4 +87,4 @@ Click to view interface details.
 - [androidShutDown🔴](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidshutdown)   
 - [androidReBoot🔴](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidreboot)  
 
-[1]: https://github.com/picoxr/AndroidHelper/wiki
+[getPUIVersion]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getpuiversion
