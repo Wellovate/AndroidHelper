@@ -6,7 +6,7 @@ This project incorporates all our other repositories into one single package, an
 
 ## Usage
 
-1. Put ``androidhelper_vx.x.x.aar`` into the Unity project's Assets/Plugins/Android directory;
+1. Put ``AndroidHelper_Vx.x.x.aar`` into the Unity project's Assets/Plugins/Android directory;  
 
 2. Refer to the sample code below to call the interface.
 
