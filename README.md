@@ -13,12 +13,12 @@ This project incorporates all our other repositories into one single package, an
    //Initialize an AndroidJavaObject with the class name of the interface
    AndroidJavaObject  deviceHelper= new AndroidJavaObject("com.picovr.androidhelper.DeviceHelper");
    //Get current activity
-   AndroidJavaObject  activityContext = new AndroidJavaClass("com.picovr.androidhelper.MainActivity")
+   AndroidJavaObject  activityContext = new AndroidJavaClass("com.unity3d.player.UnityPlayer")
    .GetStatic<AndroidJavaObject>("currentActivity");
    //Must call "init" method before call other interface.
    deviceHelper.Call("init", activityContext );
    //Call the interface.
-   deviceHelper.Call<string>("getPUIVersion");
+   string puiVersion = deviceHelper.Call<string>("getPUIVersion");
    ```
 
 ## Sytem Signature
