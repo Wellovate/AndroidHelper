@@ -2,6 +2,9 @@
 
 This project incorporates all our other repositories into one single package, and categorizes all interfaces into 5 classes:  ``DeviceHelper``, ``StorageHelper``, ``BlueToothHelper``, ``WifiHelper``, ``PowerManagerHelper``.
 
+## Download
+   Clone this repo and make project in Android Studio, or download aar file in [release page]     (https://github.com/picoxr/AndroidHelper/releases).
+   
 ## Usage
 
 1. Put ``AndroidHelper_Vx.x.x.aar`` into the Unity project's Assets/Plugins/Android directory;  
