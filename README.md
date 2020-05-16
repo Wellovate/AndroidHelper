@@ -3,7 +3,7 @@
 This project incorporates all our other repositories into one single package, and categorizes all interfaces into 5 classes:  ``DeviceHelper``, ``StorageHelper``, ``BlueToothHelper``, ``WifiHelper``, ``PowerManagerHelper``.
 
 ## Download
-   Clone this repo and make project in Android Studio, or download aar file in [release page]     (https://github.com/picoxr/AndroidHelper/releases).
+   Clone this repo and make project in Android Studio, or download aar file in [release page](https://github.com/picoxr/AndroidHelper/releases).
    
 ## Usage
 
@@ -46,7 +46,7 @@ Click to view interface details.
 
 ### DeviceHelper  
 - [getPUIVersion][getPUIVersion]: get PUI version of device.
-- [getDeviceType](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getdevicetype): Get type of device.   
+- [getDeviceType][getDeviceType]: Get type of device.   
 - [getSN](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsn): Get serial number of device.        
 - [silentInstall🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename): Install the application without user interaction.   
 - [silentUninstall🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename):  Uninstall the application without user interaction.       
@@ -68,7 +68,7 @@ Click to view interface details.
 - [registerBlueToothReceiver](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#void-registerbluetoothreceiver): Register the receiver for bluetooth status broadcast.       
 - [unregisterBlueToothReceiver](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#void-unregisterbluetoothreceiver): Log out the receiver for bluetooth status broadcast.   
 - [getContentDevice](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getcontentdevice): View the name of connected bluetooth.     
-- [getBlueToothMac](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getbluetoothmac): Get MAC address of connected bluetooth.      
+- [getBlueToothMac🔴](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getbluetoothmac): Get MAC address of connected bluetooth.      
 ### WifiHelper
 - [registerWifiReceiver](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-registerwifireceiver)   
 - [unregisterWifiReceiver](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-unregisterwifireceiver)   
@@ -89,3 +89,4 @@ Click to view interface details.
 - [androidReBoot🔴](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidreboot)  
 
 [getPUIVersion]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getpuiversion
+[getDeviceType]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getdevicetype
