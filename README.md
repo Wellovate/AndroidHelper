@@ -1,15 +1,13 @@
 # Android Helper
 
 This project incorporates all our other repositories into one single package, and categorizes all interfaces into 5 classes:  ``DeviceHelper``, ``StorageHelper``, ``BlueToothHelper``, ``WifiHelper``, ``PowerManagerHelper``.
-
-## Download
-   Clone this repo and make project in Android Studio, or download aar file in [release page](https://github.com/picoxr/AndroidHelper/releases).
    
 ## Usage
+1. Clone this repo and make project in Android Studio, or download aar file in [release page](https://github.com/picoxr/AndroidHelper/releases).
 
-1. Put ``AndroidHelper_Vx.x.x.aar`` into the Unity project's Assets/Plugins/Android directory;  
+2. Put ``AndroidHelper_Vx.x.x.aar`` into the Unity project's Assets/Plugins/Android directory;  
 
-2. Refer to the sample code below to call the interface.
+3. Refer to the sample code below to call the interface.
 
    ```
    //Initialize an AndroidJavaObject with the class name of the interface
@@ -39,8 +37,6 @@ Refer to the following two steps:
 
 
 ## Interfaces
-
-Click to view interface details.
 
 **Note: The interface marked with red dots requires the system signature**
 
