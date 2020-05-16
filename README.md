@@ -22,7 +22,7 @@ This project incorporates all our other repositories into one single package, an
 
 ## Sytem Signature
 
-The interface marked with red dots requires the APK has the system signature.
+The interface marked with red dot requires the APK has the system signature.
 
 Refer to the following two steps:
 
