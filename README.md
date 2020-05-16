@@ -44,8 +44,8 @@ Refer to the following two steps:
 - [getPUIVersion][getPUIVersion]: get PUI version of device.
 - [getDeviceType][getDeviceType]: Get type of device.   
 - [getSN](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsn): Get serial number of device.        
-- [silentInstall🖊️](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename): Install the application without user interaction.   
-- [silentUninstall🖊️](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename):  Uninstall the application without user interaction.       
+- [silentInstall‼](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename): Install the application without user interaction.   
+- [silentUninstall‼](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename):  Uninstall the application without user interaction.       
 - [killApp🖊️](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-killappstring-packagename): Kill the application.     
 - [launch🖊️](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchstring-filepath): Call WebVR browser to open the file.       
 - [goToApp](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-gotoappstring-packagename): Start an application.       
