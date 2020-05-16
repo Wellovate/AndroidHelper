@@ -44,10 +44,10 @@ Refer to the following two steps:
 - [getPUIVersion][getPUIVersion]: get PUI version of device.
 - [getDeviceType][getDeviceType]: Get type of device.   
 - [getSN](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsn): Get serial number of device.        
-- [silentInstall🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename): Install the application without user interaction.   
-- [silentUninstall🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename):  Uninstall the application without user interaction.       
-- [killApp🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-killappstring-packagename): Kill the application.     
-- [launch🔴](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchstring-filepath): Call WebVR browser to open the file.       
+- [silentInstall🖊️](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename): Install the application without user interaction.   
+- [silentUninstall🖊️](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename):  Uninstall the application without user interaction.       
+- [killApp🖊️](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-killappstring-packagename): Kill the application.     
+- [launch🖊️](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchstring-filepath): Call WebVR browser to open the file.       
 - [goToApp](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-gotoappstring-packagename): Start an application.       
 - [startVRShell](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-startvrshellint-way-string-args): Launch Android 2D application.        
 - [getAppsString](https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getappsstring): Get a name list of installed applications.         
@@ -64,14 +64,14 @@ Refer to the following two steps:
 - [registerBlueToothReceiver](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#void-registerbluetoothreceiver): Register the receiver for bluetooth status broadcast.       
 - [unregisterBlueToothReceiver](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#void-unregisterbluetoothreceiver): Log out the receiver for bluetooth status broadcast.   
 - [getContentDevice](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getcontentdevice): View the name of connected bluetooth.     
-- [getBlueToothMac🔴](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getbluetoothmac): Get MAC address of connected bluetooth.      
+- [getBlueToothMac🖊️](https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getbluetoothmac): Get MAC address of connected bluetooth.      
 ### WifiHelper
 - [registerWifiReceiver](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-registerwifireceiver)   
 - [unregisterWifiReceiver](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-unregisterwifireceiver)   
 - [getConnectedWifiSSID](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getconnectedwifissid)   
 - [getWifiMac](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getwifimac)   
 - [getWifiIpAddress](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getwifiipaddress)   
-- [connectWifi🔴](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifistring-ssidstring-password)   
+- [connectWifi🖊️](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifistring-ssidstring-password)   
 - [connectWifiWithStaticIP](https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifiwithstaticipstring-ssidstring-passwordstring-ipstring-gatewaystring-dns)  
 ### PowerManagerHelper
 - [androidLockScreen](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidlockscreen)   
@@ -81,8 +81,8 @@ Refer to the following two steps:
 - [releaseWakeLock](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-releasewakelock)   
 - [setPropSleep](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-setpropsleepstring-time)   
 - [setPropScreenOff](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-setpropscreenoffstring-time)   
-- [androidShutDown🔴](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidshutdown)   
-- [androidReBoot🔴](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidreboot)  
+- [androidShutDown🖊️](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidshutdown)   
+- [androidReBoot🖊️](https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidreboot)  
 
 [getPUIVersion]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getpuiversion
 [getDeviceType]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getdevicetype
