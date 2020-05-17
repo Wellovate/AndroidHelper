@@ -1,15 +1,15 @@
 # Android Helper
 
-This project incorporates all our other repositories into one single package, and categorizes all interfaces into 5 classes:  ``DeviceHelper``, ``StorageHelper``, ``BlueToothHelper``, ``WifiHelper``, ``PowerManagerHelper``.
+This project incorporates all our other Android repositories into one single package, and categorizes all interfaces into 5 classes:  ``DeviceHelper``, ``StorageHelper``, ``BlueToothHelper``, ``WifiHelper``, ``PowerManagerHelper``.
    
 ## Usage
 1. Clone this repo and make project in Android Studio, or download aar file in [release page](https://github.com/picoxr/AndroidHelper/releases).
 
-2. Put ``AndroidHelper_Vx.x.x.aar`` into the Unity project's Assets/Plugins/Android directory;  
+2. Put ``AndroidHelper_Vx.x.x.aar`` into your Unity project's Assets/Plugins/Android directory;  
 
 3. Refer to the sample code below to call the interface.
 
-   ```
+   ```c#
    //Initialize an AndroidJavaObject with the class name of the interface
    AndroidJavaObject  deviceHelper= new AndroidJavaObject("com.picovr.androidhelper.DeviceHelper");
    //Get current activity
@@ -23,9 +23,9 @@ This project incorporates all our other repositories into one single package, an
 
 ## Sytem Signature
 
-The interface marked with red dot requires the APK has the system signature.
+The interface marked with red dot("🔴") requires the APK has the system signature.
 
-Refer to the following two steps:
+Refer to the following steps:
 
 1. Add sharedUserId in ``AndroidManifest.xml`` in Assets/Plugins/Android
 
@@ -38,7 +38,7 @@ Refer to the following two steps:
 
 ## Interfaces
 
-**Note: The interface marked with "🔴" requires the system signature**
+**Note: The interface marked with "🔴" requires the APK has the system signature**
 
 ### DeviceHelper  
 - [getPUIVersion][getPUIVersion]: get PUI version of device.
