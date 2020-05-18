@@ -47,7 +47,7 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [silentInstall🔴][silentInstall]: Install the application without user interaction.   
 - [silentUninstall🔴][silentUninstall]:  Uninstall the application without user interaction.       
 - [killApp🔴][killApp]: Kill the application.     
-- [launch🔴][launch]: Call WebVR browser to open the file.       
+- [launch🔴][launch]: Call WebVR browser to open the link in the file.          
 - [goToApp][goToApp]: Start an application.       
 - [startVRShell][startVRShell]: Launch Android 2D application.        
 - [getAppsString][getAppsString]: Get a name list of installed applications.         
