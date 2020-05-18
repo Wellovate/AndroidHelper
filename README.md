@@ -51,8 +51,8 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [goToApp][goToApp]: Start an application.       
 - [startVRShell][startVRShell]: Launch Android 2D application.        
 - [getAppsString][getAppsString]: Get a name list of installed applications.         
-- [registerHomeReceiver][registerHomeReceiver]: Register the receiver for Home event broadcast.        
-- [unregisterHomeReceiver][unregisterHomeReceiver]: Log out the receiver for Home event broadcast.     
+- [registerHomeReceiver][registerHomeReceiver]: Register the receiver of Home event broadcast.        
+- [unregisterHomeReceiver][unregisterHomeReceiver]: Unregister the receiver of Home event broadcast.     
 - [openRecenterApp][openRecenterApp]: Adjust startup calibration application.       
 - [installApp][installApp]: Install the application.    
 ### StorageHelper
@@ -61,15 +61,15 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [updateFile][updateFile]: Update storaged file.   
 - [getSDCardPath][getSDCardPath]: Get SD card path.   
 ### BlueToothHelper
-- [registerBlueToothReceiver][registerBlueToothReceiver]: Register the receiver for bluetooth status broadcast.       
-- [unregisterBlueToothReceiver][unregisterBlueToothReceiver]: Log out the receiver for bluetooth status broadcast.   
-- [getContentDevice][getContentDevice]: View the name of connected bluetooth.     
-- [getBlueToothMac🔴][getBlueToothMac]: Get MAC address of connected bluetooth.      
+- [registerBlueToothReceiver][registerBlueToothReceiver]: Register the receiver of bluetooth status broadcast.       
+- [unregisterBlueToothReceiver][unregisterBlueToothReceiver]: Unregister the receiver of bluetooth status broadcast.   
+- [getContentDevice][getContentDevice]: Get the name of connected bluetooth.     
+- [getBlueToothMac🔴][getBlueToothMac]: Get the MAC address of connected bluetooth.      
 ### WifiHelper
-- [registerWifiReceiver][registerWifiReceiver]: Register the receiver for Wi-Fi status broadcast.   
-- [unregisterWifiReceiver][unregisterWifiReceiver]:  Log out the receiver for Wi-Fi status broadcast.  
-- [getConnectedWifiSSID][getConnectedWifiSSID]: View the name of Wi-Fi connection.      
-- [getWifiMac][getWifiMac]: Get MAC address of connected Wi-Fi.   
+- [registerWifiReceiver][registerWifiReceiver]: Register the receiver of Wi-Fi status broadcast.   
+- [unregisterWifiReceiver][unregisterWifiReceiver]:  Unregister the receiver of Wi-Fi status broadcast.  
+- [getConnectedWifiSSID][getConnectedWifiSSID]: Get the name of Wi-Fi connection.      
+- [getWifiMac][getWifiMac]: Get the MAC address of connected Wi-Fi.   
 - [getWifiIpAddress][getWifiIpAddress]: Get Wi-Fi IP address.     
 - [connectWifi🔴][connectWifi]: Connect to Wi-Fi.    
 - [connectWifiWithStaticIP][connectWifiWithStaticIP]: Set static IP.      
