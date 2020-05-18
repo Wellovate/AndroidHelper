@@ -30,7 +30,9 @@ Refer to the following steps to sign you APK using Pico system signature:
 1. Add sharedUserId in ``AndroidManifest.xml`` in Assets/Plugins/Android
 
    ```
-   android:sharedUserId="android.uid.system"
+   <manifest ... android:sharedUserId="android.uid.system">
+   ...
+   </manifest>
    ```
 
 2. Refer to [online instruction](http://static.appstore.picovr.com/docs/KioskMode/chapter_three.html) to sign your apk with system signature.
