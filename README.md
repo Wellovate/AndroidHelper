@@ -25,7 +25,7 @@ This project incorporates all our other Android repositories into one single pac
 
 The interface marked with red dot("🔴") requires the APK has the system signature.
 
-Refer to the following steps:
+Refer to the following steps to sign you APK using Pico system signature:
 
 1. Add sharedUserId in ``AndroidManifest.xml`` in Assets/Plugins/Android
 
