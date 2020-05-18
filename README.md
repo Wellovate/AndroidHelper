@@ -23,7 +23,7 @@ This project incorporates all our other Android repositories into one single pac
 
 ## Sytem Signature
 
-The interface marked with red dot("🔴") requires the APK has the system signature.
+The interface marked with star "(*)" requires the system signature.
 
 Refer to the following steps to sign you APK using Pico system signature:
 
@@ -38,16 +38,16 @@ Refer to the following steps to sign you APK using Pico system signature:
 
 ## Interfaces
 
-**Note: The interface marked with "🔴" requires the APK has the system signature**
+**Note: The interface marked with star "(*)" requires the APK has the system signature**
 
 ### DeviceHelper  
 - [getPUIVersion][getPUIVersion]: get PUI version of device.
 - [getDeviceType][getDeviceType]: Get type of device.   
 - [getSN][getSN]: Get serial number of device.        
-- [silentInstall🔴][silentInstall]: Install the application without user interaction.   
-- [silentUninstall🔴][silentUninstall]:  Uninstall the application without user interaction.       
-- [killApp🔴][killApp]: Kill the application.     
-- [launch🔴][launch]: Call WebVR browser to open the link in the file.          
+- [silentInstall (*)][silentInstall]: Install the application without user interaction.   
+- [silentUninstall (*)][silentUninstall]:  Uninstall the application without user interaction.       
+- [killApp (*)][killApp]: Kill the application.     
+- [launch (*)][launch]: Call WebVR browser to open the link in the file.          
 - [goToApp][goToApp]: Start an application.       
 - [startVRShell][startVRShell]: Launch Android 2D application.        
 - [getAppsString][getAppsString]: Get a name list of installed applications.         
@@ -64,14 +64,14 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [registerBlueToothReceiver][registerBlueToothReceiver]: Register the receiver of bluetooth status broadcast.       
 - [unregisterBlueToothReceiver][unregisterBlueToothReceiver]: Unregister the receiver of bluetooth status broadcast.   
 - [getContentDevice][getContentDevice]: Get the name of connected bluetooth.     
-- [getBlueToothMac🔴][getBlueToothMac]: Get the MAC address of connected bluetooth.      
+- [getBlueToothMac (*)][getBlueToothMac]: Get the MAC address of connected bluetooth.      
 ### WifiHelper
 - [registerWifiReceiver][registerWifiReceiver]: Register the receiver of Wi-Fi status broadcast.   
 - [unregisterWifiReceiver][unregisterWifiReceiver]:  Unregister the receiver of Wi-Fi status broadcast.  
 - [getConnectedWifiSSID][getConnectedWifiSSID]: Get the name of Wi-Fi connection.      
 - [getWifiMac][getWifiMac]: Get the MAC address of connected Wi-Fi.   
 - [getWifiIpAddress][getWifiIpAddress]: Get Wi-Fi IP address.     
-- [connectWifi🔴][connectWifi]: Connect to Wi-Fi.    
+- [connectWifi (*)][connectWifi]: Connect to Wi-Fi.    
 - [connectWifiWithStaticIP][connectWifiWithStaticIP]: Set static IP.      
 ### PowerManagerHelper
 - [androidLockScreen][androidLockScreen]: Lock the screen.    
@@ -81,8 +81,8 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [releaseWakeLock][releaseWakeLock]: Deactivate WakeLock.       
 - [setPropSleep][setPropSleep]: Sets System Sleep Timeout.           
 - [setPropScreenOff][setPropScreenOff]: Sets Screen Off Timeout.      
-- [androidShutDown🔴][androidShutDown]: Shutdown the system.      
-- [androidReBoot🔴][androidReBoot]: Reboot the system.        
+- [androidShutDown (*)][androidShutDown]: Shutdown the system.      
+- [androidReBoot (*)][androidReBoot]: Reboot the system.        
 
 [getPUIVersion]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getpuiversion
 [getDeviceType]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getdevicetype
