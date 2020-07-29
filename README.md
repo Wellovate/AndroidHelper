@@ -62,7 +62,7 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [openRecenterApp][openRecenterApp]: Adjust startup calibration application.       
 - [installApp][installApp]: Install the application.    
 - [setSystemProp][setSystemProp]: Set specified system property.   
-- [setSystemProp][setSystemProp]: Get specific system property.    
+- [getSystemProp][setSystemProp]: Get specific system property.    
 ### StorageHelper
 - [getStorageFreeSize][getStorageFreeSize]: The remaining storage space inside the device.      
 - [getStorageTotalSize][getStorageTotalSize]: Total storage space inside the device.         
