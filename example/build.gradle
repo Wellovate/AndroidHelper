@@ -1,22 +1,17 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
 
     defaultConfig {
+        applicationId "com.picovr.example"
         minSdkVersion 26
         targetSdkVersion 28
-        versionCode 111
-        versionName "1.1.1"
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        repositories {
-            flatDir {
-                dirs 'libs'
-            }
-        }
-
     }
 
     buildTypes {
@@ -25,14 +20,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    lintOptions {
-        abortOnError false
-    }
 }
 
 dependencies {
-    implementation files('libs/android-support-v4.jar')
-    provided files('libs/pvrSDK-release.aar')
-    provided files('libs/classes.jar')
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation files('../app/libs/android-support-v4.jar')
+    implementation project(':app')
+    testImplementation 'junit:junit:4.12'
 }

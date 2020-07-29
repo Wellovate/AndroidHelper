@@ -13,7 +13,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
+import android.util.JsonWriter;
 import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONStringer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,17 +31,45 @@ public class GetPackageClass {
 
     public String getAppString(Context context) {
         Log.e(TAG, "getAppString: ");
-        StringBuffer stringBuffer = new StringBuffer();
+//        StringBuffer stringBuffer = new StringBuffer();
+//
+//        stringBuffer.append("[");
+//        for (AppInfo appInfo : getAllAppList(context)) {
+//            stringBuffer.append(appInfo.toString());
+//            stringBuffer.append(",");
+//        }
+//        stringBuffer.append("]");
+//
+//        stringBuffer.deleteCharAt(stringBuffer.length() - 2);
+//        return stringBuffer.toString();
 
-        for (AppInfo appInfo : getAllAppList(context)) {
-            stringBuffer.append(appInfo.toString());
+        JSONStringer jsonStringer = new JSONStringer();
+        try {
+            jsonStringer.array();
+            for (AppInfo appInfo : getAllAppList(context)) {
+                jsonStringer.object();
+                jsonStringer.key("mPackageName")
+                        .value(appInfo.getPackageName())
+                        .key("mActivityName")
+                        .value(appInfo.getActivityName())
+                        .key("mAppName")
+                        .value(appInfo.getAppName())
+                        .key("mInstallTime")
+                        .value(appInfo.getInstallTime())
+                        .key("mSystemFlag")
+                        .value(appInfo.getSystemFlag());
+                jsonStringer.endObject();
+            }
+            jsonStringer.endArray();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-
-        return stringBuffer.toString();
+        String s = jsonStringer.toString();
+        return s;
     }
 
     public List<AppInfo> getAllAppList(Context context) {
-        Log.e(TAG, "getAllAppList: " );
+        Log.e(TAG, "getAllAppList: ");
         PackageManager packageManager = context.getPackageManager();
         List<AppInfo> allAppsList = new ArrayList<AppInfo>();
         Intent intent = new Intent(Intent.ACTION_MAIN);

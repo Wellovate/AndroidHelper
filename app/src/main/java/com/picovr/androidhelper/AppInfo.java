@@ -62,7 +62,12 @@ public class AppInfo {
 
     @Override
     public String toString() {
-        return "AppInfo [mPackageName=" + mPackageName + ", mActivityName=" + mActivityName + ", mAppName=" + mAppName
-                + ", mInstallTime=" + mInstallTime + ", mSystemFlag=" + mSystemFlag + "]&";
+        return "{"
+                + "mPackageName:"  + mPackageName
+                + ", mActivityName:" + mActivityName
+                + ", mAppName:" + mAppName
+                + ", mInstallTime:" + mInstallTime
+                + ", mSystemFlag:" + mSystemFlag
+                + "}";
     }
 }

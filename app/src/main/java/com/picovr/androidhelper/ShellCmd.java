@@ -36,14 +36,18 @@ class ShellCmd {
 
 	private static void handleProcess(Process process, ICmdResultCallback callback) {
 		if (process == null) {
-			callback.onError("process start执行失败");
+			callback.onError("Process start failed.");
 		} else {
 			InputStream errorStream = process.getErrorStream();
 			InputStream inputStream = process.getInputStream();
 			String errorMsg = getErrorMsg(errorStream);
 			String normalMsg = getNormalMsg(inputStream);
-			callback.onError(errorMsg);
-			callback.onComplete(normalMsg);
+
+			if (errorMsg.equals("")){
+				callback.onComplete(normalMsg);
+			} else {
+				callback.onError(errorMsg);
+			}
 			process.destroy();
 		}
 	}

@@ -51,10 +51,10 @@ public class WifiHelper extends AndroidHelper {
         mContext.registerReceiver(mWifiReceiver, intentFilter);
     }
 
-    public void unregisterWifiReceiver(Context context) {
+    public void unregisterWifiReceiver() {
         Log.e(TAG, "unregisterWifiReceiver: ");
         if (mWifiReceiver != null) {
-            context.unregisterReceiver(mWifiReceiver);
+            mContext.unregisterReceiver(mWifiReceiver);
         }
     }
 
