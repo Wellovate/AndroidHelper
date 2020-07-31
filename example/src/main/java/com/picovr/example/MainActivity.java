@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -30,12 +29,12 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         StringBuffer s = new StringBuffer();
         for (int i = 0; i < permissions.length; i++) {
-            if (grantResults[i] != PackageManager.PERMISSION_GRANTED){
-               s.append(permissions[i]);
-               s.append("\n");
+            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                s.append(permissions[i]);
+                s.append("\n");
             }
         }
         if (s.length() > 0) {
@@ -43,7 +42,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void initView(){
+    private void initView() {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1);
         ListView listView = findViewById(R.id.lv_main);
         arrayAdapter.addAll(menus);

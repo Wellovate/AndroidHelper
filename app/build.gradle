@@ -32,7 +32,8 @@ android {
 }
 
 dependencies {
-    implementation files('libs/android-support-v4.jar')
-    provided files('libs/pvrSDK-release.aar')
-    provided files('libs/classes.jar')
+    implementation files('libs/pvrSDK-release.aar')
+    implementation files('libs/core-1.3.0-rc01.jar')
+    provided files ('libs/classes.jar')
+
 }

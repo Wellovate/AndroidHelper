@@ -24,7 +24,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation files('../app/libs/android-support-v4.jar')
     implementation project(':app')
     testImplementation 'junit:junit:4.12'
+    implementation group: 'androidx.annotation', name: 'annotation', version: '1.2.0-alpha01'
 }
