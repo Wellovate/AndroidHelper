@@ -52,7 +52,8 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [silentInstall (*)][silentInstall]: Install the application without user interaction.   
 - [silentUninstall (*)][silentUninstall]:  Uninstall the application without user interaction.       
 - [killApp (*)][killApp]: Kill the application.     
-- [launch (*)][launch]: Call WebVR browser to open the link in the file.          
+- [launchBrowser][launchBrowser]: Call specified browser to open the link.    
+- [launchBrowserWithLinkInFile][launchBrowserWithLinkInFile]: Call specified browser to open the link in the file.    
 - [goToApp][goToApp]: Start an application.       
 - [startVRShell][startVRShell]: Launch Android 2D application.        
 - [getAppsString][getAppsString]: Get a name list of installed applications.         
@@ -60,6 +61,8 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [unregisterHomeReceiver][unregisterHomeReceiver]: Unregister the receiver of Home event broadcast.     
 - [openRecenterApp][openRecenterApp]: Adjust startup calibration application.       
 - [installApp][installApp]: Install the application.    
+- [setSystemProp][setSystemProp]: Set specified system property.   
+- [getSystemProp][setSystemProp]: Get specific system property.    
 ### StorageHelper
 - [getStorageFreeSize][getStorageFreeSize]: The remaining storage space inside the device.      
 - [getStorageTotalSize][getStorageTotalSize]: Total storage space inside the device.         
@@ -95,7 +98,8 @@ Refer to the following steps to sign you APK using Pico system signature:
 [silentInstall]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename
 [silentUninstall]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename
 [killApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-killappstring-packagename  
-[launch]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchstring-filepath  
+[launchBrowser]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchbrowserint-browser-string-link      
+[launchBrowserWithLinkInFile]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchbrowserwithlinkinfileint-browser-string-filepath          
 [goToApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-gotoappstring-packagename  
 [startVRShell]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-startvrshellint-way-string-args  
 [getAppsString]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getappsstring  
@@ -103,6 +107,8 @@ Refer to the following steps to sign you APK using Pico system signature:
 [unregisterHomeReceiver]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-unregisterhomereceiver  
 [openRecenterApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp  
 [installApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp  
+[setSystemProp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#boolean-setsystempropstring-key-string-value    
+[getSystemProp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsystempropstring-key-string-defaultvalue    
 [getStorageFreeSize]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#float-getstoragefreesize  
 [getStorageTotalSize]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#float-getstoragetotalsize  
 [updateFile]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#void-updatefilestring-filepath    
