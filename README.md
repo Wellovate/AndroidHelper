@@ -56,7 +56,7 @@ Refer to the following steps to sign you APK using Pico system signature:
 - [launchBrowserWithLinkInFile][launchBrowserWithLinkInFile]: Call specified browser to open the link in the file.    
 - [goToApp][goToApp]: Start an application.       
 - [startVRShell][startVRShell]: Launch Android 2D application.        
-- [getAppsString][getAppsString]: Get a name list of installed applications.         
+- [getAppList][getAppList]: Get a name list of installed applications.         
 - [registerHomeReceiver][registerHomeReceiver]: Register the receiver of Home event broadcast.        
 - [unregisterHomeReceiver][unregisterHomeReceiver]: Unregister the receiver of Home event broadcast.     
 - [openRecenterApp][openRecenterApp]: Adjust startup calibration application.       
@@ -102,7 +102,7 @@ Refer to the following steps to sign you APK using Pico system signature:
 [launchBrowserWithLinkInFile]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchbrowserwithlinkinfileint-browser-string-filepath          
 [goToApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-gotoappstring-packagename  
 [startVRShell]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-startvrshellint-way-string-args  
-[getAppsString]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getappsstring  
+[getAppList]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getapplist   
 [registerHomeReceiver]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-registerhomereceiver   
 [unregisterHomeReceiver]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-unregisterhomereceiver  
 [openRecenterApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp  
