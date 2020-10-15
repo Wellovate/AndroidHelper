@@ -59,7 +59,7 @@ public class WifiHelperActivity extends Activity {
     }
 
     private void connectWifi() {
-        wifiHelper.connectWifi("support", "pico@2019");
+        wifiHelper.connectWifi("support_vpn", "Support@2025");
     }
 
     private void connectWifiWithStaticIP() {

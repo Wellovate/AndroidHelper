@@ -23,6 +23,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.List;
 
 public class DeviceHelper extends AndroidHelper {
@@ -37,19 +38,23 @@ public class DeviceHelper extends AndroidHelper {
     }
 
     public String getPUIVersion() {
+        Log.d(TAG, "getPUIVersion: " + Build.DISPLAY);
         return Build.DISPLAY;
     }
 
     public String getDeviceType() {
+        Log.d(TAG, "getDeviceType: " + Build.MODEL);
         return Build.MODEL;
     }
 
     public String getSN() {
+        Log.d(TAG, "getSN: " + Build.SERIAL);
         return Build.SERIAL;
     }
 
     //System
     public void silentInstall(final String apkPath, final String installerPkgName) {
+        Log.d(TAG, "silentInstall: " + "apkPath: " + apkPath + ", installerPkgName: " + installerPkgName);
         File file = new File(apkPath);
         if (file.exists()) {
             new Thread() {
@@ -77,12 +82,13 @@ public class DeviceHelper extends AndroidHelper {
                 }
             }.start();
         } else {
-            Log.e(TAG, "silentInstall: " + "apk file doesn't exist!");
+            Log.e(TAG, "silentInstall: " + "Apk file doesn't exist!");
         }
     }
 
     //System
     public void silentUninstall(String pkgName) {
+        Log.d(TAG, "silentUninstall: pkgName: " + pkgName);
         if (mContext.getPackageManager().getLaunchIntentForPackage(pkgName) != null) {
             PackageManager pm = mContext.getPackageManager();
             Class<?>[] uninstalltypes = new Class[]{String.class, IPackageDeleteObserver.class, int.class};
@@ -117,6 +123,7 @@ public class DeviceHelper extends AndroidHelper {
 
     //System
     public void killApp(String pkgName) {
+        Log.d(TAG, "killApp: pkgName: " + pkgName);
         int pid = -1;
         Log.e(TAG, "killapp: ");
         ActivityManager am = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
@@ -130,11 +137,12 @@ public class DeviceHelper extends AndroidHelper {
                 break;
             }
         }
-        Log.e(TAG, "picovr.factorytest.cmd" + "kill " + pid);
+        Log.d(TAG, "picovr.factorytest.cmd" + "kill " + pid);
         setSystemProperties("picovr.factorytest.cmd", "kill " + pid);
     }
 
     public void launchBrowserWithLinkInFile(int browser, String filePath) {
+        Log.d(TAG, "launchBrowserWithLinkInFile: browser: " + browser + ", filePath: " + filePath);
         launchBrowser(browser, readFile(filePath));
     }
 
@@ -144,6 +152,7 @@ public class DeviceHelper extends AndroidHelper {
      *                2: Firefox VR browser
      */
     public void launchBrowser(int browser, String link) {
+        Log.d(TAG, "launchBrowser: browser: " + browser + ", link: " + link);
         Uri uri = Uri.parse(link);
         Intent intent = new Intent();
         intent.setAction("android.intent.action.VIEW");
@@ -181,7 +190,7 @@ public class DeviceHelper extends AndroidHelper {
     }
 
     private String readFile(String filepath) {
-        Log.e(TAG, "readFile: ");
+        Log.d(TAG, "readFile: ");
         File file = new File(filepath);
         byte[] buff = new byte[(int) file.length()];
         FileInputStream fileInputStream = null;
@@ -202,6 +211,7 @@ public class DeviceHelper extends AndroidHelper {
     }
 
     public void goToApp(String packagename) {
+        Log.d(TAG, "goToApp: packageName: " + packagename);
         if (mContext.getPackageManager().getLaunchIntentForPackage(packagename) != null) {
             Intent intent = new Intent();
             PackageManager packageManager = mContext.getPackageManager();
@@ -213,6 +223,7 @@ public class DeviceHelper extends AndroidHelper {
     }
 
     public void startVRShell(int way, String[] args) {
+        Log.d(TAG, "startVRShell: way: " + way + ", args:" + Arrays.toString(args));
         Intent vrsIntent = new Intent();
         vrsIntent.setAction("pvr.intent.action.ADAPTER");
         vrsIntent.setPackage("com.pvr.adapter");
@@ -224,19 +235,23 @@ public class DeviceHelper extends AndroidHelper {
     public String getAppList() {
         GetPackageClass getPackageClass = new GetPackageClass();
         String s = getPackageClass.getAppString(mContext);
+        Log.d(TAG, "getAppList: " + s);
         return s;
     }
 
     //需要Unity端设置接收信息
     public void registerHomeReceiver() {
+        Log.d(TAG, "registerHomeReceiver: ");
         HomeKeyReceiverClass.registerHomeReceiver(mContext);
     }
 
     public void unregisterHomeReceiver() {
+        Log.d(TAG, "unregisterHomeReceiver: ");
         HomeKeyReceiverClass.unregisterHomeReceiver(mContext);
     }
 
     public void openRecenterApp() {
+        Log.d(TAG, "openRecenterApp: ");
         if (getSystemProperties(KEY, "0").equals("0")) {
             Log.i(TAG, KEY + " = 0");
             if (checkIfAppInstalled(mContext, "com.picovr.recenter")) {
@@ -279,7 +294,7 @@ public class DeviceHelper extends AndroidHelper {
     }
 
     public void openAppByComponentName(Context context, String packageName, String activityName) {
-        Log.i(TAG, "openAppByComponentName-------->" + packageName + "-" + activityName);
+        Log.d(TAG, "openAppByComponentName-------->" + packageName + "-" + activityName);
         if (!TextUtils.isEmpty(packageName) && !TextUtils.isEmpty(activityName)) {
             Intent in = new Intent(Intent.ACTION_MAIN);
             in.addCategory(Intent.CATEGORY_LAUNCHER);
@@ -309,6 +324,7 @@ public class DeviceHelper extends AndroidHelper {
     }
 
     public void installApp(String path) {
+        Log.d(TAG, "installApp: ");
         int sdk = Build.VERSION.SDK_INT;
         Log.e(TAG, "installApp：" + sdk);
         Intent intent;
@@ -333,6 +349,7 @@ public class DeviceHelper extends AndroidHelper {
     }
 
     public boolean setSystemProp(String key, String value) {
+        Log.d(TAG, "setSystemProp: " + "key: " + key + ", value: " + value);
         try {
             final Class<?> systemProperties = Class
                     .forName("android.os.SystemProperties");
@@ -349,6 +366,7 @@ public class DeviceHelper extends AndroidHelper {
     }
 
     public String getSystemProp(String key, String defaultValue) {
+        Log.d(TAG, "getSystemProp: " + key);
         try {
             final Class<?> systemProperties = Class.forName("android.os.SystemProperties");
             final Method get = systemProperties.getMethod("get", String.class,

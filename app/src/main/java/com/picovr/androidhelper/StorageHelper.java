@@ -19,16 +19,18 @@ public class StorageHelper extends AndroidHelper {
 
     @Override
     public void init(Context context) {
+        Log.d(TAG, "init: ");
         mContext = context;
     }
 
     public float getStorageFreeSize() {
+        Log.d(TAG, "getStorageFreeSize: ");
         float free = 0f;
         try {
             StorageStatsManager manager = mContext.getSystemService(StorageStatsManager.class);
             free = manager.getFreeBytes(StorageManager.UUID_DEFAULT) / (1000 * 1000 * 1000f);
             float total = manager.getTotalBytes(StorageManager.UUID_DEFAULT) / (1000 * 1000 * 1000f);
-            Log.i(TAG, "free : " + free + "  total : " + total + " used " + (total - free));
+            Log.d(TAG, "free : " + free + "  total : " + total + " used " + (total - free));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -41,7 +43,7 @@ public class StorageHelper extends AndroidHelper {
             StorageStatsManager manager = mContext.getSystemService(StorageStatsManager.class);
             free = manager.getFreeBytes(StorageManager.UUID_DEFAULT) / (1000 * 1000 * 1000f);
             total = manager.getTotalBytes(StorageManager.UUID_DEFAULT) / (1000 * 1000 * 1000f);
-            Log.i(TAG, "free : " + free + "  total : " + total + " used " + (total - free));
+            Log.d(TAG, "free : " + free + "  total : " + total + " used " + (total - free));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -49,14 +51,14 @@ public class StorageHelper extends AndroidHelper {
     }
 
     public void updateFile(String filePath) {
-        Log.e(TAG, "updateFileStatus: ");
+        Log.d(TAG, "updateFileStatus: " + "filePath: " + filePath);
         Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         intent.setData(Uri.fromFile(new File(filePath)));
         mContext.sendBroadcast(intent);
     }
 
     public String getSDCardPath() {
-
+        Log.d(TAG, "getSDCardPath: ");
         StorageManager mStorageManager = (StorageManager) mContext.getSystemService(Context.STORAGE_SERVICE);
         Class<?> storageVolumeClazz = null;
         try {

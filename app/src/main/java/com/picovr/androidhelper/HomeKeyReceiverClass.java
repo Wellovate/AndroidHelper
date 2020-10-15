@@ -22,19 +22,19 @@ public class HomeKeyReceiverClass {
     private static BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.e(TAG, "onReceive: " );
+            Log.d(TAG, "onReceive: " );
             if (intent.getIntExtra("keycode", 0) == KeyEvent.KEYCODE_HOME) {
                 switch (intent.getIntExtra("action", 3)) {
                     case 0:
-                        Log.e(TAG, "onReceive: " + "single tap");
+                        Log.d(TAG, "onReceive: " + "single tap");
                         UnityPlayer.UnitySendMessage(OBJECT_NAME, METHOD_NAME, SINGLE_TAP);
                         break;
                     case 1:
-                        Log.e(TAG, "onReceive: " + "double tap");
+                        Log.d(TAG, "onReceive: " + "double tap");
                         UnityPlayer.UnitySendMessage(OBJECT_NAME, METHOD_NAME, DOUBLE_TAP);
                         break;
                     case 2:
-                        Log.e(TAG, "onReceive: " + "long press");
+                        Log.d(TAG, "onReceive: " + "long press");
                         UnityPlayer.UnitySendMessage(OBJECT_NAME, METHOD_NAME, LONG_PRESS);
                         break;
                     default:
@@ -45,13 +45,13 @@ public class HomeKeyReceiverClass {
     };
 
     public static void registerHomeReceiver(Context context) {
-        Log.e(TAG, "registerHomeReceiver: " );
+        Log.d(TAG, "registerHomeReceiver: " );
         IntentFilter filter = new IntentFilter("android.intent.keybroadcast");
         context.registerReceiver(broadcastReceiver, filter);
     }
 
     public static void unregisterHomeReceiver(Context context) {
-        Log.e(TAG, "unregisterHomeReceiver: " );
+        Log.d(TAG, "unregisterHomeReceiver: " );
         if (broadcastReceiver != null) {
             context.unregisterReceiver(broadcastReceiver);
         }

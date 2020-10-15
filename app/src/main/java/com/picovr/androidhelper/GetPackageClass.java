@@ -30,18 +30,7 @@ public class GetPackageClass {
     private static final String TAG = "GetPackageClass";
 
     public String getAppString(Context context) {
-        Log.e(TAG, "getAppString: ");
-//        StringBuffer stringBuffer = new StringBuffer();
-//
-//        stringBuffer.append("[");
-//        for (AppInfo appInfo : getAllAppList(context)) {
-//            stringBuffer.append(appInfo.toString());
-//            stringBuffer.append(",");
-//        }
-//        stringBuffer.append("]");
-//
-//        stringBuffer.deleteCharAt(stringBuffer.length() - 2);
-//        return stringBuffer.toString();
+        Log.d(TAG, "getAppString: ");
 
         JSONStringer jsonStringer = new JSONStringer();
         try {
@@ -65,11 +54,12 @@ public class GetPackageClass {
             e.printStackTrace();
         }
         String s = jsonStringer.toString();
+        Log.d(TAG, "getAppString: applist: " + s);
         return s;
     }
 
     public List<AppInfo> getAllAppList(Context context) {
-        Log.e(TAG, "getAllAppList: ");
+        Log.d(TAG, "getAllAppList: ");
         PackageManager packageManager = context.getPackageManager();
         List<AppInfo> allAppsList = new ArrayList<AppInfo>();
         Intent intent = new Intent(Intent.ACTION_MAIN);

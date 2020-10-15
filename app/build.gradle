@@ -32,8 +32,8 @@ android {
 }
 
 dependencies {
-    implementation files('libs/pvrSDK-release.aar')
     implementation files('libs/core-1.3.0-rc01.jar')
+    provided files('libs\\vractivity.jar')
     provided files ('libs/classes.jar')
 
 }

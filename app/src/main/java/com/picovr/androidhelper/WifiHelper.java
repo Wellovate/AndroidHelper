@@ -38,11 +38,12 @@ public class WifiHelper extends AndroidHelper {
 
     @Override
     public void init(Context context) {
+        Log.d(TAG, "init: ");
         mContext = context;
     }
 
     public void registerWifiReceiver() {
-        Log.e(TAG, "registerWifiReceiver: ");
+        Log.d(TAG, "registerWifiReceiver: ");
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
         intentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
@@ -52,18 +53,22 @@ public class WifiHelper extends AndroidHelper {
     }
 
     public void unregisterWifiReceiver() {
-        Log.e(TAG, "unregisterWifiReceiver: ");
+        Log.d(TAG, "unregisterWifiReceiver: ");
         if (mWifiReceiver != null) {
             mContext.unregisterReceiver(mWifiReceiver);
         }
     }
 
     public String getConnectedWifiSSID() {
+        Log.d(TAG, "getConnectedWifiSSID: ");
         WifiManager wifiManager = (WifiManager) mContext.getApplicationContext().getSystemService(WIFI_SERVICE);
-        return wifiManager.getConnectionInfo().getSSID();
+        String ssid = wifiManager.getConnectionInfo().getSSID();
+        Log.d(TAG, "getConnectedWifiSSID: ssid: " + ssid);
+        return ssid;
     }
 
     public String getWifiMac() {
+        Log.d(TAG, "getWifiMac: ");
         WifiManager wifiManager = (WifiManager) mContext.getApplicationContext().getSystemService(WIFI_SERVICE);
         return wifiManager.getConnectionInfo().getMacAddress();
     }
@@ -95,10 +100,9 @@ public class WifiHelper extends AndroidHelper {
     }
 
     public void connectWifi(String SSID, String PASSWORD) {
-
-        Log.e(TAG, "adnroidConnectWifi");
-        Log.e(TAG, "SSID = " + SSID);
-        Log.e(TAG, "PASSWORD = " + PASSWORD);
+        Log.d(TAG, "connectWifi");
+        Log.d(TAG, "SSID = " + SSID);
+        Log.d(TAG, "PASSWORD = " + PASSWORD);
         WifiManager wifiManager = (WifiManager) mContext.getApplicationContext().getSystemService(WIFI_SERVICE);
         WifiConfiguration wifiConfig = CreateWifiInfo(wifiManager, SSID, PASSWORD, 3);
         int wcgID = wifiManager.addNetwork(wifiConfig);
@@ -107,7 +111,6 @@ public class WifiHelper extends AndroidHelper {
     }
 
     public WifiConfiguration CreateWifiInfo(WifiManager wifiManager, String SSID, String Password, int Type) {
-
         Log.d(TAG, "CreateWifiInfo , SSID = " + SSID + ", Password = " + Password + ", Type = " + Type);
         WifiConfiguration config = new WifiConfiguration();
         config.allowedAuthAlgorithms.clear();
@@ -148,6 +151,7 @@ public class WifiHelper extends AndroidHelper {
             config.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
             config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
             config.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
+            config.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
             config.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
             config.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
             config.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
@@ -158,9 +162,8 @@ public class WifiHelper extends AndroidHelper {
 
     public void connectWifiWithStaticIP(final String SSID, String PASSWORD, final String ip, final String gateway,
                              final String dns) {
-
         WifiManager wifiManager = (WifiManager) mContext.getApplicationContext().getSystemService(WIFI_SERVICE);
-        Log.d(TAG, "androidSetIpAddress");
+        Log.d(TAG, "connectWifiWithStaticIP");
         WifiConfiguration tempConfig = IsExsits(wifiManager, SSID);
 
         if (tempConfig == null) {
@@ -292,6 +295,7 @@ public class WifiHelper extends AndroidHelper {
     private BroadcastReceiver mWifiReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.d(TAG, "mWifiReceiver onReceive: ");
             if (intent.getAction().equals(WifiManager.NETWORK_STATE_CHANGED_ACTION)) {
                 NetworkInfo info = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
                 String networkState = info.isConnected() ? "1" : "0";
@@ -344,6 +348,7 @@ public class WifiHelper extends AndroidHelper {
     };
 
     private String intToIp(int i) {
+        Log.d(TAG, "intToIp: " + i);
         return (i & 0xFF) + "." + ((i >> 8) & 0xFF) + "." + ((i >> 16) & 0xFF) + "." + (i >> 24 & 0xFF);
     }
 

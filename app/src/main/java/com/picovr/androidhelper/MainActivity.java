@@ -14,13 +14,14 @@ public class MainActivity extends UnityPlayerNativeActivityPico {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate: ");
         super.onCreate(savedInstanceState);
         currentActivity = this;
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
+        Log.d(TAG, "onActivityResult: ");
         if (requestCode == PowerManagerHelper.MY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             Log.i(TAG, "onActivityResult.lockNow");
             //Delay lock of screen for 1 second, otherwise, the display will turn black (Screen on but display nothing)

@@ -30,6 +30,7 @@ public class PowerManagerHelper extends AndroidHelper {
 
     @Override
     public void init(Context context) {
+        Log.d(TAG, "init: ");
         mContext = context;
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mPolicyManager = (DevicePolicyManager) mContext.getSystemService(Context.DEVICE_POLICY_SERVICE);
@@ -38,7 +39,7 @@ public class PowerManagerHelper extends AndroidHelper {
 
     //System
     public void androidShutDown() {
-        Log.i(TAG, "androidShutDown");
+        Log.d(TAG, "androidShutDown");
         if (Build.VERSION.SDK_INT < 24) {
             try {
                 Method method = mPowerManager.getClass().getDeclaredMethod("shutdown", boolean.class, boolean.class);
@@ -58,15 +59,13 @@ public class PowerManagerHelper extends AndroidHelper {
 
     //System
     public void androidReBoot() {
-
-        Log.i(TAG, "androidReBoot");
+        Log.d(TAG, "androidReBoot");
         mPowerManager.reboot("");
     }
 
 
     public void androidLockScreen() {
-        Log.i(TAG, "androidLockScreen");
-
+        Log.d(TAG, "androidLockScreen");
         if (mPolicyManager.isAdminActive(mComponentName)) {
             Log.i(TAG, "lockNow");
             mPolicyManager.lockNow();
@@ -78,7 +77,7 @@ public class PowerManagerHelper extends AndroidHelper {
     }
 
     private void activeManager() {
-        Log.i(TAG, "activeManager()");
+        Log.d(TAG, "activeManager()");
         Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
         intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mComponentName);
         intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Lock Screen");
@@ -86,13 +85,14 @@ public class PowerManagerHelper extends AndroidHelper {
     }
 
     public void androidUnlockScreen() {
-        Log.e(TAG, "androidUnlockScreen");
+        Log.d(TAG, "androidUnlockScreen");
         wakeLock = mPowerManager.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag:");
         wakeLock.acquire();
         wakeLock.release();
     }
 
     public void acquireWakeLock() {
+        Log.d(TAG, "acquireWakeLock: ");
         if (wakeLock == null) {
             wakeLock = mPowerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, this.getClass().getCanonicalName());
             wakeLock.setReferenceCounted(false);
@@ -102,6 +102,7 @@ public class PowerManagerHelper extends AndroidHelper {
     }
 
     public void acquireWakeLock(long timeout) {
+        Log.d(TAG, "acquireWakeLock: ");
         if (wakeLock == null) {
             wakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, this.getClass().getCanonicalName());
             wakeLock.setReferenceCounted(false);
@@ -111,6 +112,7 @@ public class PowerManagerHelper extends AndroidHelper {
     }
 
     public void releaseWakeLock() {
+        Log.d(TAG, "releaseWakeLock: ");
         if (wakeLock != null && wakeLock.isHeld()) {
             wakeLock.release();
             wakeLock = null;
@@ -119,7 +121,7 @@ public class PowerManagerHelper extends AndroidHelper {
     }
 
     public void setPropSleep(String time) {
-        Log.e(TAG, "setpropSleep:" + time);
+        Log.d(TAG, "setpropSleep:" + time);
         try {
             Log.e(TAG, "setpropSleep:" + SLEEP_TIME + time);
             execCommand(SLEEP_TIME + time);
@@ -129,7 +131,7 @@ public class PowerManagerHelper extends AndroidHelper {
     }
 
     public void setPropScreenOff(String time) {
-        Log.e(TAG, "setPropLockScreen:" + time);
+        Log.d(TAG, "setPropLockScreen:" + time);
         try {
             Log.e(TAG, "setPropLockScreen:" + LOCK_SCREEN + time);
             execCommand(LOCK_SCREEN + time);
@@ -139,7 +141,7 @@ public class PowerManagerHelper extends AndroidHelper {
     }
 
     public void execCommand(String command) throws IOException {
-
+        Log.d(TAG, "execCommand: command: " + command);
         Runtime runtime = Runtime.getRuntime();
         Process proc = runtime.exec(command);
         InputStream inputstream = proc.getInputStream();

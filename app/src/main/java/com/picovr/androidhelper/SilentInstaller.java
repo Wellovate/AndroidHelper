@@ -1,10 +1,13 @@
 package com.picovr.androidhelper;
 
 import android.os.Build;
+import android.util.Log;
 
 public class SilentInstaller {
+	private static final String TAG = "SilentInstaller";
 
 	public static void install(String apkPath, String installerPkgName, ShellCmd.ICmdResultCallback callback) {
+		Log.d(TAG, "install: " + "apkPath: " + apkPath + ", installPkgName: " + installerPkgName);
 		boolean below7 = Build.VERSION.SDK_INT < 24;
 		String[] cmds = null;
 		if (below7) {

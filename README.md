@@ -4,7 +4,7 @@ This project incorporates most of our Android repositories into one single packa
 
 ## Prerequirement
  Knowledge of [Unity Scripting API: AndroidJavaObject](https://docs.unity3d.com/ScriptReference/AndroidJavaObject.html)
-   
+
 ## Usage
 1. Clone this repo and make project in Android Studio, or download aar file in [release page](https://github.com/picoxr/AndroidHelper/releases).
 
@@ -39,6 +39,18 @@ Refer to the following steps to sign you APK using Pico system signature:
    ```
 
 2. Refer to [online instruction](http://static.appstore.picovr.com/docs/KioskMode/chapter_three.html) to sign your apk with system signature.
+
+## Resolve Android support library conflict
+
+The ``installApp`` API use ``AndroidX`` support library which may cause conflict if there is another support libraty in your unity project. To resolve this problem, follow steps below. Note that the ``installApp`` API won't work anymore after doing this.
+
+1. Rename ``AndroidHelper_vx.x.x.aar`` to ``AndroidHelper_vx.x.x.zip``.
+2. Unzip all files in ``AndroidHelper_vx.x.x.zip`` to ``AndroidHelper_vx.x.x\``.
+3. Open ``AndroidHelper_vx.x.x\`` folder, delete the jar file ``core-1.3.0-rc01.jar`` in libs folder.
+4. Open AndroidManifest.xml, delete ``<provider ...>...</provider>``.
+3. Open CMD and run ``cd YOUR_JDK_FOLDER_PATH\bin`` to access JDK command.
+4. Run ``jar cvf AndroidHelper_Modified.aar -C YOUR_FOLDER_PATH\AndroidHelper_vx.x.x .`` to generate a new AAR.
+5. Place ``AndroidHelper_Modified.aar`` into your Unity project.
 
 
 ## Interfaces
@@ -97,41 +109,41 @@ Refer to the following steps to sign you APK using Pico system signature:
 [getSN]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsn
 [silentInstall]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentinstallstring-apkpath-string-packagename
 [silentUninstall]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-silentuninstallstring-packagename
-[killApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-killappstring-packagename  
-[launchBrowser]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchbrowserint-browser-string-link      
-[launchBrowserWithLinkInFile]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchbrowserwithlinkinfileint-browser-string-filepath          
-[goToApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-gotoappstring-packagename  
-[startVRShell]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-startvrshellint-way-string-args  
-[getAppList]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getapplist   
-[registerHomeReceiver]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-registerhomereceiver   
-[unregisterHomeReceiver]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-unregisterhomereceiver  
-[openRecenterApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp  
-[installApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp  
-[setSystemProp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#boolean-setsystempropstring-key-string-value    
-[getSystemProp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsystempropstring-key-string-defaultvalue    
-[getStorageFreeSize]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#float-getstoragefreesize  
-[getStorageTotalSize]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#float-getstoragetotalsize  
-[updateFile]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#void-updatefilestring-filepath    
-[getSDCardPath]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#string-getsdcardpath  
-[registerBlueToothReceiver]: https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#void-registerbluetoothreceiver  
-[unregisterBlueToothReceiver]: https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#void-unregisterbluetoothreceiver    
-[getContentDevice]: https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getcontentdevice  
-[getBlueToothMac]: https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getbluetoothmac  
-[registerWifiReceiver]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-registerwifireceiver  
-[unregisterWifiReceiver]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-unregisterwifireceiver     
-[getConnectedWifiSSID]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getconnectedwifissid   
-[getWifiMac]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getwifimac   
-[getWifiIpAddress]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getwifiipaddress  
-[connectWifi]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifistring-ssidstring-password    
-[connectWifiWithStaticIP]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifiwithstaticipstring-ssidstring-passwordstring-ipstring-gatewaystring-dns  
-[androidLockScreen]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidlockscreen   
-[androidUnLockScreen]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidunlockscreen   
-[acquireWakeLock]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-acquirewakelock   
-[acquireWakeLock(timeout)]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-acquirewakelocklong-timeout   
-[releaseWakeLock]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-releasewakelock   
-[setPropSleep]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-setpropsleepstring-time   
-[setPropScreenOff]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-setpropscreenoffstring-time   
-[androidShutDown]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidshutdown   
-[androidReBoot]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidreboot  
+[killApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-killappstring-packagename
+[launchBrowser]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchbrowserint-browser-string-link
+[launchBrowserWithLinkInFile]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-launchbrowserwithlinkinfileint-browser-string-filepath
+[goToApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-gotoappstring-packagename
+[startVRShell]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-startvrshellint-way-string-args
+[getAppList]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getapplist
+[registerHomeReceiver]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-registerhomereceiver
+[unregisterHomeReceiver]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-unregisterhomereceiver
+[openRecenterApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp
+[installApp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#void-openrecenterapp
+[setSystemProp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#boolean-setsystempropstring-key-string-value
+[getSystemProp]: https://github.com/picoxr/AndroidHelper/wiki/DeviceHelper#string-getsystempropstring-key-string-defaultvalue
+[getStorageFreeSize]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#float-getstoragefreesize
+[getStorageTotalSize]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#float-getstoragetotalsize
+[updateFile]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#void-updatefilestring-filepath
+[getSDCardPath]: https://github.com/picoxr/AndroidHelper/wiki/StorageHelper#string-getsdcardpath
+[registerBlueToothReceiver]: https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#void-registerbluetoothreceiver
+[unregisterBlueToothReceiver]: https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#void-unregisterbluetoothreceiver
+[getContentDevice]: https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getcontentdevice
+[getBlueToothMac]: https://github.com/picoxr/AndroidHelper/wiki/BlueToothHelper#string-getbluetoothmac
+[registerWifiReceiver]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-registerwifireceiver
+[unregisterWifiReceiver]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-unregisterwifireceiver
+[getConnectedWifiSSID]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getconnectedwifissid
+[getWifiMac]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getwifimac
+[getWifiIpAddress]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#string-getwifiipaddress
+[connectWifi]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifistring-ssidstring-password
+[connectWifiWithStaticIP]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifiwithstaticipstring-ssidstring-passwordstring-ipstring-gatewaystring-dns
+[androidLockScreen]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidlockscreen
+[androidUnLockScreen]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidunlockscreen
+[acquireWakeLock]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-acquirewakelock
+[acquireWakeLock(timeout)]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-acquirewakelocklong-timeout
+[releaseWakeLock]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-releasewakelock
+[setPropSleep]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-setpropsleepstring-time
+[setPropScreenOff]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-setpropscreenoffstring-time
+[androidShutDown]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidshutdown
+[androidReBoot]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidreboot
 
 
