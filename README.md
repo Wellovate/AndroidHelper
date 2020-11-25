@@ -30,7 +30,7 @@ The interface marked with star "(*)" requires the system signature.
 
 Refer to the following steps to sign you APK using Pico system signature:
 
-1. Add sharedUserId in ``AndroidManifest.xml`` in Assets/Plugins/Android
+1. Add sharedUserId in ``AndroidManifest.xml`` in Assets/Plugins/Android（If you are using Unity 2019.3.x and above，this directory should be [Unity_PATH]\Editor\Data\PlaybackEngines\AndroidPlayer\Apk\LauncherManifest.xml).
 
    ```xml
    <manifest ... android:sharedUserId="android.uid.system">
