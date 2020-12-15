@@ -13,7 +13,8 @@ This project incorporates most of our Android repositories into one single packa
 3. Refer to the sample code below to call the interface.
 
    ```c#
-   //Initialize an AndroidJavaObject with the class name of the interface
+   //Initialize an AndroidJavaObject with the class name of the interface, 
+   //e.g., DeviceHelper, StorageHelper, BlueToothHelper, WifiHelper, PowerManagerHelper.
    AndroidJavaObject  deviceHelper= new AndroidJavaObject("com.picovr.androidhelper.DeviceHelper");
    //Get current activity
    AndroidJavaObject  activityContext = new AndroidJavaClass("com.unity3d.player.UnityPlayer")
@@ -137,7 +138,7 @@ The ``installApp`` API use ``AndroidX`` support library which may cause conflict
 [connectWifi]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifistring-ssidstring-password
 [connectWifiWithStaticIP]: https://github.com/picoxr/AndroidHelper/wiki/WifiHelper#void-connectwifiwithstaticipstring-ssidstring-passwordstring-ipstring-gatewaystring-dns
 [androidLockScreen]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidlockscreen
-[androidUnLockScreen]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidunlockscreen
+[androidUnlockScreen]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-androidunlockscreen
 [acquireWakeLock]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-acquirewakelock
 [acquireWakeLock(timeout)]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-acquirewakelocklong-timeout
 [releaseWakeLock]: https://github.com/picoxr/AndroidHelper/wiki/PowerManagerHelper#void-releasewakelock
