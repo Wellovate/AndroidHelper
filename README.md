@@ -25,7 +25,7 @@ This project incorporates most of our Android repositories into one single packa
    string puiVersion = deviceHelper.Call<string>("getPUIVersion");
    ```
 
-## Sytem Signature
+## System Signature
 
 The interface marked with star "(*)" requires the system signature.
 
